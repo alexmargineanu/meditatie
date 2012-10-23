@@ -9,8 +9,8 @@
  *	 ];
  */			
 var valute = getAllCurrenciesFromXML('data/currencies.xml');
-	  
-  
+
+ 
   
 /*
  * Functie    : Convert

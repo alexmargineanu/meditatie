@@ -24,6 +24,9 @@ function getActiveCurrenciesFromXML(file) {
 		 	$(data).find('Active').each(function() {
 				currencies.push ($(this).attr('currency'));
 			});
+		},
+		error : function(e){
+			console.log('error with XML file ' + file);
 		}
 	});
 

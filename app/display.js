@@ -22,7 +22,42 @@
 	
 		$('#valuta1').append($("<option></option>").attr("value", 'RON').text('RON'));
 		$('#valuta2').prepend($("<option></option>").attr("value", 'RON').text('RON'));
+		
+		if(document.getElementById('data')) {
+			document.getElementById('data').innerHTML = 'actualizat pe ' + getUpdateTimeFromXML('data/currencies.xml');	
+		}	
 	} 
+
+
+
+/*
+ * Functie    : getUpdateTimeFromXML
+ *
+ * Descriere  : incarca un fisier XML si cauta cheia PublishingDate
+ * 				pentru a afla data ultimului update
+ *
+ * Parametri  : string file
+ *
+ * Returneaza : date date
+ * 
+ */
+
+function getUpdateTimeFromXML(file) {
+
+	var PublishingDate = new Date();
+
+	$.ajax({
+		type : 'GET',
+		url : file,
+		dataType : 'xml',
+		async : false,
+		success : function(data) {
+		 	PublishingDate = $(data).find('PublishingDate').text();
+		}
+	});
+
+	return PublishingDate;
+}
 
 	
   
