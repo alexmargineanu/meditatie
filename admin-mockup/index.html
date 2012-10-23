@@ -1,0 +1,265 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Currency today | Admin</title>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+		<link rel="stylesheet" href="../_public/css/admin.css" />
+	</head>
+	<body class="homepage ">
+		<div id="add">
+			<a class="add" href="#" onclick="toggle_visibility('foo');">if your currency is not present below, add it!</a>
+			<div id="foo">
+				<form>
+					<input type="text" name="valuta" placeholder="currency" style="width:100px;">
+					<input type="url" name="link" placeholder="feed link" style="width:100px;">
+					<input type="text" name="descriere" placeholder="its full name">
+					<button type="button">
+						ADD
+					</button>
+				</form>
+			</div>
+		</div>
+		<!--end foo/add-->
+
+		<section id="content">
+
+			<section id="options" class="clearfix">
+				<div class="option-combo">
+					<ul id="filter" class="option-set clearfix" data-option-key="filter">
+						<li>
+							<a href="#show-all" data-option-value="*" class="selected">all</a>|
+						</li>
+						<li>
+							<a href="#elements" data-option-value=".europe-currency"> European</a>|
+						</li>
+						<li>
+							<a href="#elements" data-option-value=".northamerican-currency">North-american</a>|
+						</li>
+						<li>
+							<a href="#elements" data-option-value=".eurasia-currency">Eurasian</a>|
+						</li>
+						<li>
+							<a href="#features" data-option-value=".feature">International</a>|
+						</li>
+					</ul>
+				</div>
+			</section>
+
+			<div id="container">
+
+				<div class="element feature europe-currency" data-symbol="EUR" data-category="europe-currency">
+					<p class="number">
+						12
+					</p>
+					<h3 class="symbol">EUR<span>int'l</span></h3>
+					<h2 class="name">Euro</h2>
+					<p class="weight">
+						24.305
+					</p>
+					<div class="delete"></div>
+				</div>
+
+				<div class="element europe-currency romania" data-symbol="RON" data-category="romania">
+					<p class="number">
+						92
+					</p>
+					<h3 class="symbol">RON</h3>
+					<h2 class="name">romanian new leu</h2>
+					<p class="weight">
+						238.02891
+					</p>
+					<div class="delete"></div>
+				</div>
+
+				<div class="element feature northamerican-currency usa  " data-symbol="USD" data-category="usa">
+					<p class="number">
+						64
+					</p>
+					<h3 class="symbol">USD<span>int'l</span></h3>
+					<h2 class="name">US dollar</h2>
+					<p class="weight">
+						157.25
+					</p>
+					<div class="delete"></div>
+				</div>
+
+				<div class="element northamerican-currency canada   " data-symbol="CAD" data-category="canada">
+					<p class="number">
+						39
+					</p>
+					<h3 class="symbol">CAD</h3>
+					<h2 class="name">Canadian dollar</h2>
+					<p class="weight">
+						88.90585
+					</p>
+					<div class="delete"></div>
+				</div>
+
+				<div class="element feature europe-currency  uk " data-symbol="GBP" data-category="uk">
+					<p class="number">
+						5
+					</p>
+					<h3 class="symbol">GBP<span>int'l</span></h3>
+					<h2 class="name">Great Britain Pound</h2>
+					<p class="weight">
+						10.811
+					</p>
+					<div class="delete"></div>
+				</div>
+
+				<div class="element europe-currency denmark   " data-symbol="DKK" data-category="denmark">
+					<p class="number">
+						26
+					</p>
+					<h3 class="symbol">DKK</h3>
+					<h2 class="name">Danish krone</h2>
+					<p class="weight">
+						55.845
+					</p>
+					<div class="delete"></div>
+				</div>
+
+				<div class="element europe-currency sweden   " data-symbol="SEK" data-category="sweden">
+					<p class="number">
+						95
+					</p>
+					<h3 class="symbol">SEK</h3>
+					<h2 class="name">Swedish krona</h2>
+					<p class="weight">
+						(243)
+					</p>
+					<div class="delete"></div>
+				</div>
+
+				<div class="element europe-currency norway   " data-symbol="NOK" data-category="norway">
+					<p class="number">
+						30
+					</p>
+					<h3 class="symbol">NOK</h3>
+					<h2 class="name">Norwegian krone</h2>
+					<p class="weight">
+						65.38
+					</p>
+					<div class="delete"></div>
+				</div>
+
+				<div class="element europe-currency iceland   " data-symbol="ISK" data-category="iceland">
+					<p class="number">
+						61
+					</p>
+					<h3 class="symbol">ISK</h3>
+					<h2 class="name">Icelandic krona</h2>
+					<p class="weight">
+						(145)
+					</p>
+					<div class="delete"></div>
+				</div>
+
+				<div class="element europe-currency christiania   " data-symbol="LØN" data-category="christiania">
+					<p class="number">
+						49
+					</p>
+					<h3 class="symbol">LØN</h3>
+					<h2 class="name">Christiania currency</h2>
+					<p class="weight">
+						114.818
+					</p>
+					<div class="delete"></div>
+				</div>
+
+				<div class="element europe-currency finland   " data-symbol="FIM" data-category="finland">
+					<p class="number">
+						33
+					</p>
+					<h3 class="symbol">FIM</h3>
+					<h2 class="name">Finnish markka</h2>
+					<p class="weight">
+						74.9216
+					</p>
+					<div class="delete"></div>
+				</div>
+
+				<div class="element eurasia-currency russia " data-symbol="RUB" data-category="russia">
+					<p class="number">
+						68
+					</p>
+					<h3 class="symbol">RUB</h3>
+					<h2 class="name">Russian ruble</h2>
+					<p class="weight">
+						167.259
+					</p>
+					<div class="delete"></div>
+				</div>
+
+				<div class="element europe-currency croatia   " data-symbol="HRK" data-category="croatia">
+					<p class="number">
+						34
+					</p>
+					<h3 class="symbol">HRK</h3>
+					<h2 class="name">Croatian kuna</h2>
+					<p class="weight">
+						78.96
+					</p>
+					<div class="delete"></div>
+				</div>
+
+				<div id="sites"></div>
+
+				<script src="../_public/js/jquery.isotope.min.js"></script>
+				<script>
+					$("a.add").click(function() {
+						$("#foo").toggle("fast");
+					});
+				</script>
+				<script>
+					$(function() {
+
+						var $container = $('#container');
+
+						$container.isotope({
+							masonry : {
+								columnWidth : 120
+							},
+							sortBy : 'original-order'						
+						});
+
+						var $optionSets = $('#options .option-set'), $optionLinks = $optionSets.find('a');
+
+						$optionLinks.click(function() {
+							var $this = $(this);
+							// don't proceed if already selected
+							if ($this.hasClass('selected')) {
+								return false;
+							}
+							var $optionSet = $this.parents('.option-set');
+							$optionSet.find('.selected').removeClass('selected');
+							$this.addClass('selected');
+
+							// make option object dynamically, i.e. { filter: '.my-filter-class' }
+							var options = {}, key = $optionSet.attr('data-option-key'), value = $this.attr('data-option-value');
+							// parse 'false' as false boolean
+							value = value === 'false' ? false : value;
+							options[key] = value;
+							if (key === 'layoutMode' && typeof changeLayoutMode === 'function') {
+								// changes in layout modes need extra logic
+								changeLayoutMode($this, options)
+							} else {
+								// otherwise, apply new options
+								$container.isotope(options);
+							}
+
+							return false;
+						});
+
+					});
+				</script>
+
+				<footer>
+
+				</footer>
+
+		</section>
+		<!-- #content -->
+	</body>
+</html>

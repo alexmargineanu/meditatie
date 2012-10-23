@@ -23,6 +23,8 @@
 		$('#valuta1').append($("<option></option>").attr("value", 'RON').text('RON'));
 		$('#valuta2').prepend($("<option></option>").attr("value", 'RON').text('RON'));
 		
+		/* adauga #data ultimei actualizari obtinuta din XML */
+		
 		if(document.getElementById('data')) {
 			document.getElementById('data').innerHTML = 'actualizat pe ' + getUpdateTimeFromXML('data/currencies.xml');	
 		}	
