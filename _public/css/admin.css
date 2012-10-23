@@ -155,7 +155,7 @@ font-weight:bold;
 display:none;
 width:20px;
 height:20px;
-background:url('img/close.png') no-repeat;
+background:url('../images/close.png') no-repeat;
 position:absolute;
 right:0px;
 bottom:0px;
