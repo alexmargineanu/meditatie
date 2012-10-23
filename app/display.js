@@ -1,8 +1,36 @@
   /* 
+   * Functie    : populateInterface
+   * 
+   * Descriere  : Populeza dropdown-urile valuta1 si valuta2
+   *              cu valutele active. 
+   */
+  
+	function populateInterface(){
+	  
+	  	/* lista cu valutele active */
+
+		var active_currencies = getActiveCurrenciesFromXML('data/active.xml');
+
+	  /* adauga toate valutele active in dropdown-urile de valute */
+		
+		for(i=0; i<active_currencies.length;i++){
+			$('#valuta1').append($("<option></option>").attr("value", active_currencies[i]).text(active_currencies[i]));
+			$('#valuta2').append($("<option></option>").attr("value", active_currencies[i]).text(active_currencies[i]));
+		}
+		
+		/* adauga valuta implicita RON in dropdown-urile de valute */
+	
+		$('#valuta1').append($("<option></option>").attr("value", 'RON').text('RON'));
+		$('#valuta2').prepend($("<option></option>").attr("value", 'RON').text('RON'));
+	} 
+
+	
+  
+  /* 
    * Functie    : Afiseaza
    * 
    * Descriere  : Functia colecteaza valorile introduse
-   *              de utilizator si la transmite functiei convert. 
+   *              de utilizator si le transmite functiei convert. 
    */
   function afiseaza() {
 
@@ -12,14 +40,12 @@
 
       var valuta1 = document.getElementById("valuta1").value || null, 
 		  valuta2 = document.getElementById("valuta2").value || null,
-		  suma	  = document.getElementById("suma").value || null;
+		  suma	  = document.getElementById("suma").value    || null;
 
+	 /* cheama functia convert cu parametri formati
+	 * din valorile aflate mai sus si scrie valoarea returnata
+	 * in elementul #total; */
 
-   /* cheama functia convert cu parametri formati
-    * din valorile aflate mai sus si scrie valoarea returnata
-	* in elementul #total; */
-	 
-	  var valute = getCurrenciesFromXML('data/currencies.xml');
-	  document.getElementById("total").value = convert(valuta1, valuta2, suma, valute);
+	  document.getElementById("total").value = convert(valuta1, valuta2, suma);
   }
 
