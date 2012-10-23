@@ -1,0 +1,59 @@
+* {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 30px;
+	font-style: normal;
+	font-weight: normal;
+	text-transform: normal;
+	letter-spacing: -3px;
+	line-height: 1.2em;
+	color: #555;
+}
+
+select {
+	color: #333;
+}
+input.warning {
+	background: url('../images/warning.png') no-repeat 5px 10px;
+	padding-left: 30px !important;
+}
+
+input#total {
+	color: red;
+}
+input#suma, input#total {
+	padding-left: 4px;
+	width: 160px;
+}
+
+
+#gui {
+	width: 600px;
+	text-align: center;
+	padding: 30px;
+	margin: 100px auto;	
+	background-color: #fafafa;
+	-webkit-border-radius: 10px;
+    border-radius: 10px;
+	-webkit-box-shadow:  1px 1px 1px 1px rgba(0, 0, 0, 0.1);    
+	box-shadow:  1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+#data {
+	position: relative;
+	margin: 0 auto;
+	width: 600px;
+	text-align: right;
+	top: 100px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: normal;
+	text-transform: uppercase;
+	letter-spacing: normal;
+	line-height: 1.5em;
+	color: #666;
+}
+
+body {
+	background: -webkit-gradient(linear,left top,left bottom,color-stop(75%,rgba(241, 241, 241, 1)),color-stop(100%,rgba(241, 241, 241, 0.9)));
+}
