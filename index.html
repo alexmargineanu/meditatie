@@ -9,13 +9,13 @@
 		<script type="text/javascript" src="app/display.js"></script>
 		<link rel="stylesheet" type="text/css" href="_public/css/style.css" />
 	</head>
-	<body onload="populateInterface();afiseaza();">
+	<body onload="populateInterface();triggerConvert();">
 		<div id="data"></div>
 		<div id="gui">
-			<input type="text" id="suma" value="1" onkeyup="afiseaza();"/>
-			<select id="valuta1" onChange="afiseaza();"></select>
+			<input type="text" id="suma" value="1" onkeyup="triggerConvert();"/>
+			<select id="valuta1" onChange="triggerConvert();"></select>
 			<input type="text" id="total" readonly="readonly" />
-			<select id="valuta2" onChange="afiseaza();"></select>
+			<select id="valuta2" onChange="triggerConvert();"></select>
 		</div>
 	</body>
 </html>

@@ -1,0 +1,4 @@
+AuthUserFile C:\xampp\htdocs\forbidden\.htpasswd
+AuthType Basic
+AuthName "Admin | Login"
+Require valid-user

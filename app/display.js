@@ -9,7 +9,7 @@
 	  
 	  	/* lista cu valutele active */
 
-		var active_currencies = getActiveCurrenciesFromXML('data/active.xml');
+		var active_currencies = getActiveCurrencies('data/active.xml');
 
 	  /* adauga toate valutele active in dropdown-urile de valute */
 		
@@ -26,14 +26,14 @@
 		/* adauga #data ultimei actualizari obtinuta din XML */
 		
 		if(document.getElementById('data')) {
-			document.getElementById('data').innerHTML = 'actualizat pe ' + getUpdateTimeFromXML('data/currencies.xml');	
+			document.getElementById('data').innerHTML = 'actualizat pe ' + getUpdateTime('data/currencies.xml');	
 		}	
 	} 
 
 
 
 /*
- * Functie    : getUpdateTimeFromXML
+ * Functie    : getUpdateTime
  *
  * Descriere  : incarca un fisier XML si cauta cheia PublishingDate
  * 				pentru a afla data ultimului update
@@ -44,19 +44,11 @@
  * 
  */
 
-function getUpdateTimeFromXML(file) {
+function getUpdateTime(file) {
 
-	var PublishingDate = new Date();
-
-	$.ajax({
-		type : 'GET',
-		url : file,
-		dataType : 'xml',
-		async : false,
-		success : function(data) {
-		 	PublishingDate = $(data).find('PublishingDate').text();
-		}
-	});
+	var data = requestXML(file);
+	
+	var PublishingDate = $(data).find('PublishingDate').text() || null;
 
 	return PublishingDate;
 }
@@ -64,12 +56,12 @@ function getUpdateTimeFromXML(file) {
 	
   
   /* 
-   * Functie    : Afiseaza
+   * Functie    : triggerConvert
    * 
    * Descriere  : Functia colecteaza valorile introduse
    *              de utilizator si le transmite functiei convert. 
    */
-  function afiseaza() {
+  function triggerConvert() {
 
       /* definim variabile care vor contine valorile 
        * inputurilor din HTML, daca acestea nu exista valorile

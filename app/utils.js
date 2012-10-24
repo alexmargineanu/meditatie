@@ -7,16 +7,6 @@ function isNumber(n) {
 	return !isNaN(parseFloat(n)) && isFinite(n);
 }
 
-window.onerror = function(msg, url, num) {
-	/*
-	 var xhReq = new XMLHttpRequest();
-	 xhReq.open("GET", "app/jserrors/log.php?msg="+msg+"&url="+url+"&num="+num, false);
-	 xhReq.send(null);
-	 console.log(msg, url, num);
-	 return false;
-	 */
-}
-
 var dayNames = new Array("Duminica", "Luni", "Marti", "Miercuri", "Joi", "Vineri", "Sambata");
 var monthNames = new Array("Ianuarie", "Februarie", "Martie", "Aprilie", "Mai", "Iunie", "Iulie", "August", "Septembrie", "Octobmrie", "Noiembrie", "Decembrie");
-var now = new Date(); 
+var now = new Date();

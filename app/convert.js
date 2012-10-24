@@ -1,4 +1,3 @@
-
 /* obiectul valute incarcat din XML,
  * returnat in formatul:
  * 	  [
@@ -7,11 +6,9 @@
  *	 	'USD': 3.5272,
  *	 	'GBP': 5.6474
  *	 ];
- */			
-var valute = getAllCurrenciesFromXML('data/currencies.xml');
+ */
+var valute = getAllCurrencies('data/currencies.xml');
 
- 
-  
 /*
  * Functie    : Convert
  *
@@ -19,8 +16,8 @@ var valute = getAllCurrenciesFromXML('data/currencies.xml');
  *              transformand o suma din valuta1 in valuta2.
  *
  * Parametri  : int valuta1
- *			  int valuta2
- *			  int suma
+ *			  	int valuta2
+ *			  	int suma
  *
  * Returneaza : string total
  *
