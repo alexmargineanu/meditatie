@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <Currencies>
-	<Active currency="GBP"></Active>
-	<Active currency="USD"></Active>
-	<Active currency="EUR"></Active>
+	<Active currency="EUR">4.5772</Active>
+	<Active currency="GBP">5.6224</Active>
+	<Active currency="USD">3.5128</Active>
+	<Active currency="XAU">193.8430</Active>
+	<Active currency="XDR">5.4108</Active>
+	<Active currency="RON"></Active>
 </Currencies>

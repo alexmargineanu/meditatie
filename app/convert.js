@@ -1,14 +1,3 @@
-/* obiectul valute incarcat din XML,
- * returnat in formatul:
- * 	  [
- *	 	'RON': 1,
- *	 	'EUR': 4.5642,
- *	 	'USD': 3.5272,
- *	 	'GBP': 5.6474
- *	 ];
- */
-var valute = getAllCurrencies('data/currencies.xml');
-
 /*
  * Functie    : Convert
  *

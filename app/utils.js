@@ -10,3 +10,17 @@ function isNumber(n) {
 var dayNames = new Array("Duminica", "Luni", "Marti", "Miercuri", "Joi", "Vineri", "Sambata");
 var monthNames = new Array("Ianuarie", "Februarie", "Martie", "Aprilie", "Mai", "Iunie", "Iulie", "August", "Septembrie", "Octobmrie", "Noiembrie", "Decembrie");
 var now = new Date();
+
+function sortObject(obj) {
+    var arr = [];
+    for (var prop in obj) {
+        if (obj.hasOwnProperty(prop)) {
+            arr.push({
+                'key': prop,
+                'value': obj[prop]
+            });
+        }
+    }
+    //arr.sort(function(a, b) { return b.value - a.value; });
+    return arr;
+}

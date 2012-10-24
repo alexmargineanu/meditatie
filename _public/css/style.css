@@ -9,6 +9,10 @@
 	color: #555;
 }
 
+body {
+	background: -webkit-gradient(linear,left top,left bottom,color-stop(75%,rgba(241, 241, 241, 1)),color-stop(100%,rgba(241, 241, 241, 0.9)));
+}
+
 select {
 	color: #333;
 }
@@ -51,8 +55,4 @@ input#suma, input#total {
 	letter-spacing: normal;
 	line-height: 1.5em;
 	color: #666;
-}
-
-body {
-	background: -webkit-gradient(linear,left top,left bottom,color-stop(75%,rgba(241, 241, 241, 1)),color-stop(100%,rgba(241, 241, 241, 0.9)));
 }
