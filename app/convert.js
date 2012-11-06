@@ -4,7 +4,7 @@
  * Descriere  : Functia convert simuleaza un convertor valutar,
  *              transformand o suma din valuta1 in valuta2.
  *
- * Parametri  : int valuta1
+ * @param {Integer} valuta1
  *			  	int valuta2
  *			  	int suma
  *

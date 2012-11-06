@@ -1,48 +1,32 @@
-/* obiectul valute incarcat din XML,
- * returnat in formatul:
- * 	  [
- *	 	'RON': 1,
- *	 	'EUR': 4.5642,
- *	 	'USD': 3.5272,
- *	 	'GBP': 5.6474
- *	 ];
- */
-var valute = getAllCurrencies('data/currencies.xml');
+/* lista cu toate valutele */
+
+var valute = getCurrencies();
 
 /* lista cu valutele active */
 
-var active_currencies = getActiveCurrencies('data/active.xml');
+var active_currencies = getActiveCurrencies();
 
-/* lista cu descrierea valutelor, initial setata cu un obiect gol */
+/* lista cu descrierea valutelor */
 
-var currencies_descriptions = {};
-
-/* deschide fisierul JSON si pentru fiecare valuta gasita,
- * adauga descrierea si simbolul in lista currencies_descriptions */
-
-$.each(requestFile('data/currency.json', 'json'), function(index) {
-	currencies_descriptions[this.cc] = this.name;
-});
+var info_currencies = getInfoCurrencies();
 
 /*
  * Functie    : getUpdateTime
  *
- * Descriere  : incarca fisierul XML cu valute si returneaza textul 
- * 				continut de <PublishingDate></PublishingDate> 
- *
- * Parametri  : string file
+ * Descriere  : incarca fisierul XML cu valute si returneaza textul
+ * 				continut de <PublishingDate></PublishingDate>
  *
  * Returneaza : date PublishingDate
  *
  */
 
-function getUpdateTime(file) {
+function getUpdateTime() {
 
-	var data = requestFile(file);
+    var data = requestFile('data/currencies.xml');
 
-	var PublishingDate = $(data).find('PublishingDate').text() || null;
+    var PublishingDate = $(data).find('PublishingDate').text() || null;
 
-	return PublishingDate;
+    return PublishingDate;
 }
 
 /*
@@ -51,63 +35,76 @@ function getUpdateTime(file) {
  * Descriere  : incarca fisierul XML cu valute active
  * 				si le pune in lista currencies
  *
- * Parametri  : string file
- *
  * Returneaza : array currencies
  *
  * Exemple de folosire: getActiveCurrencies('data/active.xml');
  */
 
-function getActiveCurrencies(file) {
+function getActiveCurrencies() {
 
-	var currencies = [], data = requestFile(file);
+    var data = requestFile('data/active.xml'), currencies = [];
 
-	$(data).find('Active').each(function() {
-		currencies.push($(this).attr('currency'));
-	});
-	return currencies;
+    $(data).find('Active').each(function() {
+        currencies.push($(this).attr('currency'));
+    });
+    return currencies;
 }
 
 /*
- * Functie    : getAllCurrencies
+ * Functie    : getCurrencies
  *
  * Descriere  : incarca fisierul XML cu valute si
  * 				pune valutele si ratele de schimb in obiectul currencies.
  *
- * Parametri  : string file
- *
  * Returneaza : array currencies
  *
- * Exemple de folosire: getAllCurrencies('data/currencies.xml');
+ * Exemple de folosire: getCurrencies('data/currencies.xml');
  */
 
-function getAllCurrencies(file) {
+function getCurrencies() {
 
-	/* variabila care va contine toate valutele,
-	 * initial setata doar cu RON */
-	var currencies = {
-		'RON' : 1
-	};
+    /* variabila care va contine toate valutele,
+     * initial setata doar cu RON */
+    var currencies = {
+        'RON' : 1
+    };
 
-	/* request ajax catre fisierul XML */
-	var data = requestFile(file);
+    /* request ajax catre fisierul XML, stocheaza
+     * continutul returnat in data */
+    var data = requestFile('data/currencies.xml');
 
-	/* pentru fiecare element <Rate currency="EUR">4.5757</Rate> */
+    /* pentru fiecare element <Rate currency="EUR">4.5757</Rate> din data */
 
-	$(data).find('Rate').each(function() {
+    $(data).find('Rate').each(function() {
 
-		/* stocheaza simbolul si rata de conversie*/
+        /* stocheaza simbolul si rata de conversie*/
 
-		var sym = $(this).attr('currency');
-		var rate = $(this).text();
+        var sym = $(this).attr('currency');
+        var rate = $(this).text();
 
-		/* adauga valuta curenta in obiectul currencies */
-		currencies[sym] = rate * 1;
+        /* adauga valuta curenta in obiectul currencies */
+        currencies[sym] = rate * 1;
 
-	});
+    });
 
-	/* returneaza obiectul currencies care va fi folosit in convert.js */
-	return currencies;
+    /* returneaza obiectul currencies care va fi folosit in convert.js */
+    return currencies;
+}
+
+/*
+ * Functie    : getInfoCurrencies
+ *
+ * Descriere  : adauga numele valutelor intr-o lista
+ *
+ */
+
+function getInfoCurrencies() {
+
+    /* deschide fisierul JSON si pentru fiecare valuta gasita,
+     * adauga descrierea si simbolul in lista info_currencies */
+    $.each(requestFile('data/currency.json', 'json'), function(index) {
+        info_currencies[this.cc] = this.name;
+    });
 }
 
 /*
@@ -124,21 +121,21 @@ function getAllCurrencies(file) {
  */
 function requestFile(file, type) {
 
-	var response = null, fileType = type || 'xml';
+    var response = null, fileType = type || 'xml';
 
-	$.ajax({
-		type : 'GET',
-		url : file,
-		dataType : type,
-		async : false,
-		success : function(r) {
-			response = r;
-		},
-		error : function(e) {
-			console.log('error with JSON file ' + file);
-			return false;
-		}
-	});
+    $.ajax({
+        type : 'GET',
+        url : file,
+        dataType : type,
+        async : false,
+        success : function(r) {
+            response = r;
+        },
+        error : function(e) {
+            console.log('error with ' + type + ' file: ' + file);
+            return false;
+        }
+    });
 
-	return response;
+    return response;
 }

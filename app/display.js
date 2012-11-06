@@ -19,10 +19,10 @@ function populateInterface() {
 	$('#valuta1').append($("<option></option>").attr("value", 'RON').text('RON'));
 	$('#valuta2').prepend($("<option></option>").attr("value", 'RON').text('RON'));
 
-	/* adauga #data ultimei actualizari obtinuta din XML */
+	/* adauga data ultimei actualizari obtinuta din XML in elementul #data */
 
 	if (document.getElementById('data')) {
-		document.getElementById('data').innerHTML = 'actualizat pe ' + getUpdateTime('data/currencies.xml');
+		document.getElementById('data').innerHTML = 'actualizat pe ' + getUpdateTime();
 	}
 
 }

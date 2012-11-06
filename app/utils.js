@@ -21,6 +21,6 @@ function sortObject(obj) {
             });
         }
     }
-    //arr.sort(function(a, b) { return b.value - a.value; });
+    arr.sort(function(a, b) { return b.value - a.value; });
     return arr;
 }

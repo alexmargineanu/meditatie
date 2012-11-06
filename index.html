@@ -1,22 +1,22 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-	<head>
-		<title> Curs valutar beta 1.1 </title>
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-		<script type="text/javascript" src="app/utils.js"></script>
-		<script type="text/javascript" src="app/currencies.js"></script>
-		<script type="text/javascript" src="app/convert.js"></script>
-		<script type="text/javascript" src="app/display.js"></script>
-		<link rel="stylesheet" type="text/css" href="_public/css/style.css" />
-	</head>
-	<body onload="populateInterface();triggerConvert();">
-		<div id="data"></div>
-		<div id="gui">
-			<input type="text" id="suma" value="1" onkeyup="triggerConvert();"/>
-			<select id="valuta1" onChange="triggerConvert();"></select>
-			<input type="text" id="total" readonly="readonly" />
-			<select id="valuta2" onChange="triggerConvert();"></select>
-		</div>
-		<div id="cloud"></div>
-	</body>
+    <head>
+        <title> Curs valutar beta 1.1 </title>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+        <script type="text/javascript" src="app/utils.js"></script>
+        <script type="text/javascript" src="app/currencies.js"></script>
+        <script type="text/javascript" src="app/convert.js"></script>
+        <script type="text/javascript" src="app/display.js"></script>
+        <link rel="stylesheet" type="text/css" href="_public/css/style.css" />
+    </head>
+    <body onload="populateInterface();triggerConvert();">
+        <div id="data"></div>
+        <h1>Convertor valutar <span>beta 1.1</span></h1>
+        <div id="gui">
+            <input type="text" id="suma" value="1" onkeyup="triggerConvert();"/>
+            <select id="valuta1" onChange="triggerConvert();"></select>
+            <input type="text" id="total" readonly="readonly" />
+            <select id="valuta2" onChange="triggerConvert();"></select>
+        </div>
+    </body>
 </html>
